@@ -1,14 +1,20 @@
 package com.example.demo.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Form {
 	private String firstName;
 	private String lastName;
 	private String secondName;
-	private String age;
-	private String salary;
+	private int age;
+	private int salary;
 	private String workplace;
 	private String email;
 
+	@NotNull
+	@Size(min = 2, message = "First Name must more then 2 characters")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -33,11 +39,13 @@ public class Form {
 		this.secondName = secondName;
 	}
 
-	public String getAge() {
+	@NotNull
+	@Min(value = 18, message = "Age should not be less than 18")
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -49,11 +57,11 @@ public class Form {
 		this.workplace = workplace;
 	}
 
-	public String getSalary() {
+	public int getSalary() {
 		return salary;
 	}
 
-	public void setSalary(String salary) {
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 
