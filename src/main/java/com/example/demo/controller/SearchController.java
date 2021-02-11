@@ -4,7 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Scanner;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +26,11 @@ public class SearchController {
 	}
 
 	@PostMapping("/search")
-	public String searchSubmit(@ModelAttribute Form form) {
+	public String searchSubmit(@ModelAttribute Form form, HttpServletRequest request) {
 
 		String oldData = "";
 		String[] res = null;
+		String userAgent = request.getHeader("User-Agent");
 		try {
 			FileReader fr = new FileReader("users.txt");
 			Scanner in = new Scanner(fr);
@@ -53,6 +57,9 @@ public class SearchController {
 		form.setSalary(Integer.parseInt(res[4].trim()));
 		form.setWorkplace(res[5].trim());
 		form.setEmail(res[6].trim());
+		form.setDate(new Date().toString());
+		form.setUserAgent(userAgent);
+
 		try (FileWriter nFile = new FileWriter("users.txt", false)) {
 			nFile.write(oldData);
 		} catch (IOException e) {

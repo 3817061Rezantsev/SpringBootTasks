@@ -12,6 +12,8 @@ public class Form {
 	private int salary;
 	private String workplace;
 	private String email;
+	private String date;
+	private String userAgent;
 
 	@NotNull
 	@Size(min = 2, message = "The name must be more than 2 characters.")
@@ -83,5 +85,21 @@ public class Form {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getUserAgent() {
+		return userAgent;
+	}
+
+	public void setUserAgent(String userAgent) {
+		this.userAgent = userAgent;
 	}
 }
