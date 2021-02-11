@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Greeting Started</title>
+		<meta http-equiv="Content-Type"
+			content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<h1>Result</h1>
+
+			<p th:text = "'first name ' + ${form.firstName}" />
+			<p th:text = "'second name ' + ${form.secondName}" />
+			<p th:text = "'last name ' + ${form.lastName}" />
+			<p th:text = "'age ' + ${form.age}" />
+			<p th:text = "'salary ' + ${form.salary}" />
+			<p th:text = "'workplace ' + ${form.workplace}" />
+			<p th:text = "'email ' + ${form.email}" />
+			<a href="/search">Back</a>
+	</body>
+</html> 

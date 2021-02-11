@@ -14,7 +14,7 @@ public class Form {
 	private String email;
 
 	@NotNull
-	@Size(min = 2, message = "First Name must more then 2 characters")
+	@Size(min = 2, message = "The name must be more than 2 characters.")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -67,7 +67,14 @@ public class Form {
 
 	@Override
 	public String toString() {
-		return firstName + " " + secondName + " " + lastName + " " + age + " " + salary + " " + workplace + " " + email;
+		String res = firstName;
+		res = secondName.equals("") ? res + " null" : res + " " + secondName;
+		res = lastName.equals("") ? res + " null" : res + " " + lastName;
+		res += " " + age;
+		res += " " + salary;
+		res = workplace.equals("") ? res + " null" : res + " " + workplace;
+		res = email.equals("") ? res + " null" : res + " " + email;
+		return res;
 	}
 
 	public String getEmail() {
