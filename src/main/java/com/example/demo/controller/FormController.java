@@ -36,7 +36,7 @@ public class FormController {
 			while (in.hasNextLine()) {
 				oldData += in.nextLine() + "\n";
 			}
-
+			in.close();
 		} catch (FileNotFoundException e1) {
 			System.out.println(e1.getMessage());
 		}

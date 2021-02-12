@@ -41,9 +41,8 @@ public class SearchController {
 					res = strings;
 				}
 				oldData += str + "\n";
-
 			}
-
+			in.close();
 		} catch (FileNotFoundException e1) {
 			System.out.println(e1.getMessage());
 		}
