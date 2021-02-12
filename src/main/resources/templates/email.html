@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Letters</title>
+		<meta http-equiv="Content-Type"
+			content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<form action="#" th:action="@{/email}" th:object="${sender}"
+			method="post">
+			<p>
+				Text:
+				<input type="text" th:field="*{text}" />
+			</p>
+			<p>
+				Email:
+				<input type="text" th:field="*{email}" />
+			</p>
+			<p>
+				<input type="submit" value="Send" />
+				<input type="reset" value="Reset" />
+			</p>
+		</form>
+	</body>
+</html>

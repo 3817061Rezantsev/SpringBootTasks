@@ -3,4 +3,8 @@ server:
   port: 8080
   compression:
     enabled: true
+spring:
+  mail:
+    host: localhost
+    port: 10050
 
