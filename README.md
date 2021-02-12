@@ -25,4 +25,6 @@ $ mvn spring-boot:run -Dspring-boot.run.profiles=development
 
 email:
 
+Используется FakeSPTP: https://github.com/Nilhcem/FakeSMTP#usage-on-docker
+
 java -jar fakeSMTP-2.0.jar -p 10050
